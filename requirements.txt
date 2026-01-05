@@ -1,0 +1,30 @@
+# Discord
+py-cord>=2.6.0
+
+# AI APIs
+anthropic>=0.40.0
+google-genai>=0.4.0
+
+# Database
+sqlalchemy[asyncio]>=2.0.0
+asyncpg>=0.30.0
+alembic>=1.14.0
+
+# Redis
+redis>=5.0.0
+
+# Web framework (for webhooks)
+fastapi>=0.115.0
+uvicorn>=0.34.0
+
+# HTTP client
+httpx>=0.28.0
+aiohttp>=3.11.0
+
+# Image processing
+pillow>=11.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
