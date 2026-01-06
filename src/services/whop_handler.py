@@ -11,7 +11,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from src.config import settings
 from src.models.user import User
 from src.models.transaction import Transaction
-from src.models import get_db
+from src.models.base import async_session
 
 logger = logging.getLogger("whop_handler")
 
@@ -277,7 +277,7 @@ async def whop_webhook(
         logger.info(f"Received Whop webhook: {event_type}")
 
         # Get database session
-        async for db in get_db():
+        async with async_session() as db:
             # Handle different event types
             if event_type == "payment.succeeded":
                 result = await handle_payment_succeeded(payload, db)
