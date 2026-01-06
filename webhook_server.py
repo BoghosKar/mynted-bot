@@ -1,5 +1,6 @@
 """Standalone webhook server for Whop integration."""
 
+import os
 import uvicorn
 import logging
 from src.services.whop_handler import app
@@ -14,10 +15,11 @@ logging.basicConfig(
 logger = logging.getLogger("webhook_server")
 
 if __name__ == "__main__":
-    logger.info("Starting Whop webhook server on port 8000")
+    port = int(os.getenv("PORT", 8000))
+    logger.info(f"Starting Whop webhook server on port {port}")
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=8000,
+        port=port,
         log_level="info"
     )
