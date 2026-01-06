@@ -49,34 +49,44 @@ class GeneralCog(commands.Cog):
     async def buy(self, ctx: discord.ApplicationContext):
         """Show purchase options."""
         embed = discord.Embed(
-            title="Get Credits",
-            description="Choose a plan that fits your needs",
-            color=0x87CEEB,
+            title="💳 Get Mynted AI Credits",
+            description="Purchase credits to generate stunning AI images in Discord!",
+            color=0x5865F2,
         )
 
         embed.add_field(
-            name="Starter - $15/mo",
-            value="50 credits/month\nPerfect for small projects",
-            inline=True,
+            name="🎯 Starter Pack - $9.99",
+            value="**50 credits**\nPerfect for trying out Mynted AI",
+            inline=False,
         )
         embed.add_field(
-            name="Pro - $40/mo",
-            value="200 credits/month\nFor growing brands",
-            inline=True,
+            name="🎨 Creator Pack - $29.99",
+            value="**200 credits**\nGreat for regular creators\n*Most Popular!*",
+            inline=False,
         )
         embed.add_field(
-            name="Scale - $75/mo",
-            value="500 credits/month\nFor high-volume needs",
-            inline=True,
+            name="💼 Professional Pack - $59.99",
+            value="**500 credits**\nFor serious professionals\n*Best Value!*",
+            inline=False,
+        )
+        embed.add_field(
+            name="🚀 Enterprise Pack - $199.99",
+            value="**2000 credits**\nMaximum value for power users",
+            inline=False,
         )
 
         embed.add_field(
             name="",
-            value="[Get Started on Whop](https://whop.com/mynted/)",  # TODO: Real Whop URL
+            value=(
+                "**[🛒 Buy Credits on Whop](https://whop.com/hub/biz_7iDflJsY9KDdBY/)**\n\n"
+                "✅ Instant delivery after purchase\n"
+                "✅ Credits never expire\n"
+                "✅ Secure payment via Whop"
+            ),
             inline=False,
         )
 
-        embed.set_footer(text="1 credit = 1 image | Credits roll over monthly")
+        embed.set_footer(text="1 credit = 1 AI-generated image | Powered by Claude & Gemini")
 
         await ctx.respond(embed=embed, ephemeral=True)
 

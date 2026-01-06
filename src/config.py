@@ -27,6 +27,17 @@ class Settings(BaseSettings):
     # Whop
     whop_api_key: Optional[str] = None
     whop_webhook_secret: Optional[str] = None
+    whop_company_id: Optional[str] = None
+
+    # Whop Credit Packages
+    whop_starter_product_id: Optional[str] = None
+    whop_starter_credits: int = 50
+    whop_creator_product_id: Optional[str] = None
+    whop_creator_credits: int = 200
+    whop_professional_product_id: Optional[str] = None
+    whop_professional_credits: int = 500
+    whop_enterprise_product_id: Optional[str] = None
+    whop_enterprise_credits: int = 2000
 
     # Generation settings
     gemini_model: str = "gemini-2.0-flash-exp"

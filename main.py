@@ -43,8 +43,8 @@ class MyntedBot(commands.Bot):
         # Store for temporary reference images during generation flow
         self._temp_references: dict[int, bytes] = {}
 
-    async def setup_hook(self):
-        """Called when bot is starting up."""
+    async def on_connect(self):
+        """Called when bot connects to Discord."""
         logger.info("Initializing database...")
         await init_db()
 
@@ -65,6 +65,7 @@ class MyntedBot(commands.Bot):
 
         logger.info("Syncing commands...")
         await self.sync_commands()
+        logger.info("Commands synced!")
 
     async def on_ready(self):
         """Called when bot is fully ready."""
